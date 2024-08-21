@@ -20,7 +20,7 @@ export const Login = () => {
     const handleSubmit = (event: { preventDefault: () => void; }) => {
         event.preventDefault();
         let { username, password } = document.forms[0];
-        axios.post(process.env.REACT_APP_BASE_URL + '/api/users/insert_get_api_umkt/', {url: `/managemen/karyawan/${username.value}`, auth: {username: username.value, password: password.value}}).then((response) => {
+        axios.post(process.env.REACT_APP_BASE_URL + '/api/users/insert_get_api_umkt_login/', {url: `/managemen/karyawan/${username.value}`, auth: {username: username.value, password: password.value}}).then((response) => {
                 if (response.data.profile.rows.jabatan === true && response.data.profile.rows.jabatan.filter((item:any) => item.nama_jabatan === 'Kaprodi')) {
                     cookies.set('kaprodi', true)  
                 } else {    
