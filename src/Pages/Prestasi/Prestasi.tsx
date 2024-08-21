@@ -1,7 +1,7 @@
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
-import { ExportCSV } from "../../Components/Export/ExportToCSV";
+// import { ExportCSV } from "../../Components/Export/ExportToCSV";
 import { BarChartComponent } from "../../Components/Chart/BarChartComponent";
 
 export const Prestasi = () => {
@@ -278,10 +278,10 @@ export const Prestasi = () => {
     return (
         <>
             <div className="d-flex gap-3">
-            <ExportCSV csvData={prestasi} fileName="rekap-laporan-prestasi" />
+            {/* <ExportCSV csvData={prestasi} fileName="rekap-laporan-prestasi" /> */}
             <div className="w-30">
                 <div className="input-group">
-                    <select onChange={Search_prestasi} className="form-control h-100 rounded-0 rounded-start" name="choices-button" id="choices-button" placeholder="Departure">
+                    <select onChange={Search_prestasi} className="form-control h-100 rounded-0 rounded-start" name="choices-button" id="choices-button">
                     <option value='0' selected>Semua Fakultas</option>
                     {prodiData.map((item:any, id:any) => {
                         return (
